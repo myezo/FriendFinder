@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Friend Finder</title>
+
+		<meta charset="utf-8">
+
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  		<script src="https://code.jquery.com/jquery.js"></script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+		<style>
+
+			.jumbotron{
+				width: 1000px;
+				margin: 0px auto;
+				padding: 25px;
+			}
+
+			.dropdown{
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+
+			h3{
+				font-weight: bold;
+				font-size: 30px;
+			}
+			
+			.question-font{
+				font-size: 18px;
+			}
+
+			.form-group{
+				margin-top: 35px;
+				margin-bottom: 35px;
+			}
+
+			.btn{
+				width: 100px;
+				height: 40px;
+			}
+
+
+		</style>
+
+	</head>
+
+	<body>
+
+	<div class="jumbotron">
+		<h1>Friend Finder</h1>
+		<hr>
+
+		<form method="POST" action="add-survey">
+		  <div class="form-group">
+		    <label for="name">Name:</label>
+		    <input name="name" class="form-control" id="name">
+		  </div>
+		  <div class="form-group">
+		  	<label for="link">Image:</label>
+		  	<input name="link" class="form-control" id="link">
+		  </div>
+	
+		  <br>
+
+			  <div class="form-group">
+			  	  <h3>Question 1</h3>
+			      <label for="question" class="question-font">Your mind is always buzzing with unexplored ideas and plans.</label><br>
+			      <select id="question1">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 2</h3>
+			      <label for="question" class="question-font">Generally speaking, you rely more on your experience than your imagination.</label><br>
+			      <select id="question2">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 3</h3>
+			      <label for="question" class="question-font">You find it easy to stay relaxed and focused even when there is some pressure.</label><br>
+			      <select id="question3">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 4</h3>
+			      <label for="question" class="question-font">You rarely do something just out of sheer curiosity.</label><br>
+			      <select id="question4">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 5</h3>
+			      <label for="question" class="question-font">People can rarely upset you.</label><br>
+			      <select id="question5">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 6</h3>
+			      <label for="question" class="question-font">It is often difficult for you to relate to other people’s feelings.</label><br>
+			      <select id="question6">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 7</h3>
+			      <label for="question" class="question-font">In a discussion, truth should be more important than people’s sensitivities.</label><br>
+			      <select id="question7">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 8</h3>
+			      <label for="question" class="question-font">You rarely get carried away by fantasies and ideas.</label><br>
+			      <select id="question8">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 9</h3>
+			      <label for="question" class="question-font">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label><br>
+			      <select id="question9">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+
+			  <div class="form-group">
+			  	  <h3>Question 10</h3>
+			      <label for="question" class="question-font">You feel more energetic after spending time with a group of people.</label><br>
+			      <select id="question10">
+			      	<option default>Select an Option</option>
+			        <option value="1">1 (Strong Disagree)</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			        <option value="4">4</option>
+			        <option value="5">5 (Strongly Agree)</option>
+			      </select>
+			  </div>
+			  
+			<button type="button" class="btn btn-primary">Submit</button>
+		  
+		</form>
+
+		<hr>
+
+		<p class="footer">API Repo</p>
+
+		 
+
+		  
+	</div>
+
+		  <script>
+		  
+		  $('button').on('click', function(){
+		  	event.preventDefault();
+		  	
+		  	var survey = {
+		  		name: $("#name").val().trim(),
+		  		image: $("#link").val().trim(),
+		  		question1: $("#question1").val().trim(),
+		  		question2: $("#question2").val().trim(),
+		  		question3: $("#question3").val().trim(),
+		  		question4: $("#question4").val().trim(),
+		  		question5: $("#question5").val().trim(),
+		  		question6: $("#question6").val().trim(),
+		  		question7: $("#question7").val().trim(),
+		  		question8: $("#question8").val().trim(),
+		  		question9: $("#question9").val().trim(),
+		  		question10: $("#question10").val().trim(),
+		  	};
+
+		  	console.log(survey);
+
+		  	$.ajax({
+		  		type: 'POST',
+		  		url: '/api/friends',
+		  		data: survey,
+		  		success: function(data){
+		  			$('body').html(data);
+		  		}
+		  	})
+		  })
+
+
+		  </script>
+
+		
+	</body>
+</html>
