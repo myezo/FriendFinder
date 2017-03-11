@@ -228,18 +228,27 @@
 		  				$("#question7").val(), 
 		  				$("#question8").val(), 
 		  				$("#question9").val(), 
-		  				$("#question10").val(), 
+		  				$("#question10").val() 
 		  				],
 		  		total: function(){
-		  				var total = 0;
-		  				for(var i=0; i<this.scores.length; i++){
-		  				    total += this.scores[i];
-		  				}
-		  				return total;
+		  		        var total = 0;
+		  		        for(var i=0; i<survey.scores.length; i++){
+		  		            total += parseInt(survey.scores[i]);
+		  		        }
+		  		        return total;
+		  			}
+		  		grade: function(){
+		  			if(total < 20){
+		  				return "A";
+		  			}else if (total >= 21 && total <= 30) {
+			        	return = "B";
+			        } else if (total >= 31 && total <= 40) {
+			        	return = "C";
+			        } else {
+			        	return = "D";
+			        }
 		  		}
 		  	};
-
-		  	console.log(survey);
 
 
 		  	$.ajax({
@@ -250,8 +259,6 @@
 		  			$('body').html(data);
 		  		}
 		  	})
-
-
 		  })
 
 
